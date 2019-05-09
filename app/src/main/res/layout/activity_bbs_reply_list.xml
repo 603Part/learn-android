@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:paddingBottom="57dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/reply_activity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:title="回帖列表" />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="6dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/reply_activity_user_photo"
+                            android:layout_width="38dp"
+                            android:layout_height="38dp"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/ic_launcher" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingLeft="5dp">
+
+                            <TextView
+                                android:id="@+id/reply_activity_user_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:maxLines="1"
+                                android:text="用户名"
+                                android:textColor="#000000"
+                                android:textSize="13dp" />
+
+                            <TextView
+                                android:id="@+id/reply_activity_post_send_time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="3dp"
+                                android:text="发帖时间"
+                                android:textSize="12dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="标题："
+                            android:textColor="#FF000000"
+                            android:textSize="14dp" />
+                        <TextView
+                            android:id="@+id/reply_activity_post_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="标题"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="内容："
+                            android:textColor="#FF000000"
+                            android:textSize="14dp" />
+                        <TextView
+                            android:id="@+id/reply_activity_post_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="内容"
+                            android:textSize="14dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/reply_activity_recycler_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:id="@+id/ScrollView2"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/TableRowContent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/reply_activity_reply_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_span="10000"
+                    android:background="@drawable/edit_bg"
+                    android:hint="我有话说"
+                    android:textSize="14dp"></EditText>
+            </TableRow>
+        </ScrollView>
+
+        <Button
+            android:id="@+id/reply_activity_send_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:text="发表" />
+    </LinearLayout>
+
+
+</RelativeLayout>
